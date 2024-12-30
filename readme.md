@@ -12,7 +12,7 @@ cd elephant_detection
 docker run --rm -it -e MTX_RTSPTRANSPORTS=tcp -e MTX_WEBRTCADDITIONALHOSTS=192.168.1.2 -p 8554:8554 -p 1935:1935 -p 8888:8888 -p 8889:8889 -p 8890:8890/udp -p 8189:8189/udp bluenviron/mediamtx-ffmpeg
 ```
 
-- Install ffmpeg if not allready installed.
+- Install `ffmpeg` if not allready installed.
 
 - Once the RTSP server is up and running, in a new shell window publish the sample video file as an RTSP feed in indefinite loop.
 ```bash
@@ -50,10 +50,10 @@ NOTE:
 ## 🛠️ script arguments
 - `--rtsp_url`: Complete RTSP URL for the video stream.
 
-- `--model_id`: Designates the Roboflow model ID to be used. The default value is `"elephant-detection-cxnt1/4"`.
+- `--model_id` (optional): Designates the Roboflow model ID to be used. The default value is `"elephant-detection-cxnt1/4"`.
 
 - `--confidence_threshold` (optional) : Confidence level for detections (`0` to `1`). Default is `0.7`.
 
 - `--iou_threshold` (optional) : IOU threshold for non-max suppression. Default is `0.7`.
 
-- `--roboflow_api_key` (optional): The API key for Roboflow services. Follow [this guide](https://docs.roboflow.com/api-reference/authentication#retrieve-an-api-key) to acquire your `API KEY`.
+- `--roboflow_api_key`: The API key for Roboflow services. Follow [this guide](https://docs.roboflow.com/api-reference/authentication#retrieve-an-api-key) to acquire your `API KEY`.
