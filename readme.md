@@ -1,4 +1,10 @@
 ## Elephant Detection
+- Clone repository.
+```bash
+git clone https://github.com/B-Mayur/elephant_detection.git
+cd elephant_detection
+```
+
 - Install docker
 
 - Pull docker-image of a [simple RTSP Server](https://hub.docker.com/r/bluenviron/mediamtx).
@@ -13,7 +19,7 @@ docker run --rm -it -e MTX_RTSPTRANSPORTS=tcp -e MTX_WEBRTCADDITIONALHOSTS=192.1
 ffmpeg -re -stream_loop -1 -i <path_to_sample_video_mp4> -c:v libx264 -b:v 1500k -maxrate 1500k -bufsize 2M -c:a aac -b:a 128k -f rtsp -rtsp_transport tcp -muxdelay 0.1 -muxpreload 0.5 rtsp://localhost:8554/mystream
 ```
 
-- Once the RTSP stream is up, confirm it in VLC by opening a network. using "rtsp://localhost:8554/mystream" as network url.
+- Once the RTSP stream is up, confirm it in VLC by opening a network. using `rtsp://localhost:8554/mystream` as network url.
 
 - Get an API KEY from Roboflow. Its free. Follow [this guide](https://docs.roboflow.com/api-reference/authentication#retrieve-an-api-key) to acquire your `API KEY`.
 
